@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="id"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sejarah Kurikulum Pendidikan Indonesia: Transformasi Menuju Merdeka Belajar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'sage': '#9CAF88',
+                        'terracotta': '#D4A574',
+                        'cream': '#F5F1E8',
+                        'charcoal': '#2C3E50',
+                        'warm-gray': '#8B7355',
+                        'sage-light': '#B8C5A6',
+                        'terracotta-light': '#E2C4A0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.85) 0%, rgba(156, 175, 136, 0.75) 100%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            align-items: start;
+        }
+        .bento-main {
+            grid-column: 1 / 8;
+            grid-row: 1 / 3;
+        }
+        .bento-highlight-1 {
+            grid-column: 8 / 13;
+            grid-row: 1;
+        }
+        .bento-highlight-2 {
+            grid-column: 8 / 13;
+            grid-row: 2;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .bento-main, .bento-highlight-1, .bento-highlight-2 {
+                grid-column: 1;
+                grid-row: auto;
+            }
+            .bento-main {
+                order: 1;
+            }
+            .bento-highlight-1 {
+                order: 2;
+            }
+            .bento-highlight-2 {
+                order: 3;
+            }
+        }
+        .citation-link {
+            color: #9CAF88;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #9CAF88;
+            transition: all 0.2s ease;
+        }
+        .citation-link:hover {
+            color: #D4A574;
+            border-bottom-color: #D4A574;
+        }
+        .toc-fixed {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            width: 280px;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            z-index: 50;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(156, 175, 136, 0.2);
+        }
+        .content-main {
+            margin-left: 320px;
+            padding-right: 2rem;
+        }
+    @media (max-width: 1280px) {
+        .toc-fixed {
+            display: none;
+        }
+        .content-main {
+            margin-left: 0;
+            padding-left: 2rem;
+        }
+    }
+    @media (max-width: 768px) {
+        .content-main {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+        .pull-quote {
+            border-left: 4px solid #D4A574;
+            padding-left: 2rem;
+            font-style: italic;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin: 2rem 0;
+            color: #2C3E50;
+        }
+        /* Mermaid diagram styling */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 1024px) {
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+  </head>
+
+  <body class="bg-cream text-charcoal font-sans leading-relaxed">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed rounded-lg p-6 shadow-lg">
+      <h3 class="font-serif font-bold text-lg mb-4 text-charcoal">Daftar Isi</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a href="#hero" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors">Pengantar</a>
+        </li>
+        <li>
+          <a href="#sejarah" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors">Sejarah Perkembangan</a>
+        </li>
+        <li>
+          <a href="#pra-kemerdekaan" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">Pra-Kemerdekaan</a>
+        </li>
+        <li>
+          <a href="#1947-1968" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">1947-1968</a>
+        </li>
+        <li>
+          <a href="#1975-1997" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">1975-1997</a>
+        </li>
+        <li>
+          <a href="#2004-2013" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">2004-2013</a>
+        </li>
+        <li>
+          <a href="#merdeka" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">Kurikulum Merdeka</a>
+        </li>
+        <li>
+          <a href="#perbandingan" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors">Analisis Perbandingan</a>
+        </li>
+        <li>
+          <a href="#integrasi" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors">Strategi Integrasi</a>
+        </li>
+        <li>
+          <a href="#filosofis" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">Landasan Filosofis</a>
+        </li>
+        <li>
+          <a href="#model" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">Model Integrasi</a>
+        </li>
+        <li>
+          <a href="#tantangan" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors ml-4">Tantangan &amp; Solusi</a>
+        </li>
+        <li>
+          <a href="#kesimpulan" class="block py-1 px-2 rounded hover:bg-sage-light hover:bg-opacity-30 transition-colors">Kesimpulan</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content-main">
+      <!-- Hero Section -->
+      <section id="hero" class="py-16">
+        <div class="bento-grid">
+          <!-- Main Hero Content -->
+          <div class="bento-main relative overflow-hidden rounded-lg bg-gradient-to-br from-charcoal to-warm-gray text-white">
+            <div class="gradient-overlay absolute inset-0"></div>
+            <img src="https://kimi-web-img.moonshot.cn/img/cdn.britannica.com/4a55079ae4ae3133e3c09b780c7b578d388af603.jpg" alt="Sejarah pendidikan Indonesia dengan buku klasik dan simbol nasional" class="absolute inset-0 w-full h-full object-cover opacity-30" size="wallpaper" aspect="wide" color="brown" style="photo" query="sejarah pendidikan Indonesia" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            <div class="relative z-10 p-8 h-full flex flex-col justify-center">
+              <h1 class="font-serif text-4xl md:text-5xl font-bold italic leading-tight mb-6">
+                <em>Transformasi Kurikulum Pendidikan Indonesia</em>
+              </h1>
+              <p class="text-xl text-cream mb-8 leading-relaxed">
+                Dari Rentjana Pelajaran 1947 hingga Kurikulum Merdeka: Sebuah Perjalanan Panjang Menuju Pendidikan yang Memberdayakan
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="bg-sage bg-opacity-80 px-3 py-1 rounded-full text-sm font-medium">13 Kurikulum</span>
+                <span class="bg-terracotta bg-opacity-80 px-3 py-1 rounded-full text-sm font-medium">77 Tahun Perkembangan</span>
+                <span class="bg-warm-gray bg-opacity-80 px-3 py-1 rounded-full text-sm font-medium">Merdeka Belajar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlight Cards -->
+          <div class="bento-highlight-1 bg-white rounded-lg p-6 shadow-lg border border-sage-light">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-chart-line text-2xl text-sage mr-3"></i>
+              <h3 class="font-serif font-bold text-lg">Evolusi Pendekatan</h3>
+            </div>
+            <p class="text-sm text-warm-gray leading-relaxed">
+              Dari Teacher-Centered menuju Student-Centered Learning, dari pengetahuan kognitif semata menuju pengembangan kompetensi holistik.
+            </p>
+          </div>
+
+          <div class="bento-highlight-2 bg-white rounded-lg p-6 shadow-lg border border-terracotta-light">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-compass text-2xl text-terracotta mr-3"></i>
+              <h3 class="font-serif font-bold text-lg">Filosofi Pendidikan</h3>
+            </div>
+            <p class="text-sm text-warm-gray leading-relaxed">
+              Berlandaskan pemikiran Ki Hajar Dewantara tentang &#39;Merdeka&#39; dan pendidikan yang memanusiakan manusia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section class="py-12">
+        <div class="max-w-4xl">
+          <p class="text-lg leading-relaxed text-warm-gray mb-8">
+            Kurikulum pendidikan di Indonesia telah mengalami berbagai perubahan signifikan sejak masa pra-kemerdekaan hingga saat ini, menyesuaikan dengan dinamika sosial, politik, ekonomi, dan perkembangan ilmu pengetahuan serta teknologi. Perubahan ini mencerminkan upaya berkelanjutan untuk meningkatkan kualitas pendidikan nasional dan menjawab tantangan zamannya.
+          </p>
+
+          <div class="pull-quote">
+            &#34;Setiap kurikulum yang pernah berlaku memiliki karakteristik, fokus, dan pendekatan pembelajaran yang berbeda-beda, mulai dari penekanan pada pembentukan karakter dan nasionalisme pada kurikulum awal, hingga pengembangan kompetensi dan fleksibilitas dalam kurikulum terkini seperti Kurikulum Merdeka.&#34;
+          </div>
+        </div>
+      </section>
+
+      <!-- History Section -->
+      <section id="sejarah" class="py-16">
+        <div class="max-w-6xl">
+          <h2 class="font-serif text-4xl font-bold mb-12 text-charcoal">Sejarah Perkembangan Kurikulum di Indonesia</h2>
+
+          <!-- Pre-Independence -->
+          <div id="pra-kemerdekaan" class="mb-16">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-charcoal">Kurikulum Pra-Kemerdekaan</h3>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-white rounded-lg p-6 shadow-lg">
+                <h4 class="font-semibold text-lg mb-4 flex items-center">
+                  <i class="fas fa-crown text-warm-gray mr-3"></i>
+                  Masa Kolonial Belanda
+                </h4>
+                <p class="text-warm-gray leading-relaxed mb-4">
+                  Kurikulum dirancang terutama untuk melayani kepentingan pemerintah kolonial, cenderung bersifat elitis dan terbatas, dengan fokus pada pelatihan birokrat dan tenaga kerja terdidik. <a href="#ref10" class="citation-link">[10]</a>, <a href="#ref300" class="citation-link">[300]</a>
+                </p>
+                <p class="text-sm text-warm-gray italic">
+                  Pedagogi kolonial Belanda didasarkan pada prinsip dualisme, gradualisme, kontrol pusat, target terbatas, dan tidak adanya kurikulum terstandarisasi.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-6 shadow-lg">
+                <h4 class="font-semibold text-lg mb-4 flex items-center">
+                  <i class="fas fa-flag text-warm-gray mr-3"></i>
+                  Masa Pendudukan Jepang (1942-1945)
+                </h4>
+                <p class="text-warm-gray leading-relaxed mb-4">
+                  Kurikulum menekankan pada pendidikan patriotisme, disiplin, dan pengetahuan teknis yang mendukung tujuan militer Jepang. <a href="#ref10" class="citation-link">[10]</a>, <a href="#ref280" class="citation-link">[280]</a>
+                </p>
+                <p class="text-sm text-warm-gray italic">
+                  Bahasa Indonesia mulai digunakan sebagai bahasa pengantar, menggantikan bahasa Belanda.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-cream border-l-4 border-terracotta p-6 rounded-r-lg">
+              <p class="text-warm-gray italic">
+                <strong>Catatan Penting:</strong> Semua jenjang sekolah dasar dengan berbagai tingkatannya dihapuskan, dan yang tersisa hanyalah sekolah dasar untuk rakyat Indonesia yang disebut Kokumin Gako dengan masa belajar 6 tahun. <a href="#ref10" class="citation-link">[10]</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 1947-1968 Era -->
+          <div id="1947-1968" class="mb-16">
+            <h3 class="font-serif text-2xl font-semibold mb-8 text-charcoal">Era Pembentukan Karakter Bangsa (1947-1968)</h3>
+
+            <div class="space-y-8">
+              <!-- 1947 -->
+              <div class="bg-white rounded-lg p-8 shadow-lg border-l-4 border-sage">
+                <h4 class="font-semibold text-xl mb-4 text-charcoal">Kurikulum 1947 (Rentjana Pelajaran 1947)</h4>
+                <p class="text-warm-gray leading-relaxed mb-4">
+                  Merupakan kurikulum pertama yang digunakan oleh bangsa Indonesia setelah merdeka. Saat itu, istilah &#34;kurikulum&#34; belum populer, sehingga pemerintah mengadopsi istilah &#34;rencana pelajaran&#34; dari bahasa Belanda, &#34;leer plan&#34;. <a href="#ref3" class="citation-link">[3]</a>, <a href="#ref52" class="citation-link">[52]</a>
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                  <div>
+                    <h5 class="font-semibold mb-2 text-charcoal">Tujuan Utama:</h5>
+                    <ul class="text-sm text-warm-gray space-y-1">
+                      <li>• Pembentukan watak dan kesadaran bernegara</li>
+                      <li>• Semangat nasionalisme</li>
+                      <li>• Pancasila sebagai dasar pendidikan</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold mb-2 text-charcoal">Karakteristik:</h5>
+                    <ul class="text-sm text-warm-gray space-y-1">
+                      <li>• Materi pembelajaran disusun sesuai kejadian sehari-hari</li>
+                      <li>• Fokus pada kesenian dan pendidikan jasmani</li>
+                      <li>• Struktur mata pelajaran terpisah-pisah</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 1952 -->
+              <div class="bg-white rounded-lg p-8 shadow-lg border-l-4 border-terracotta">
+                <h4 class="font-semibold text-xl mb-4 text-charcoal">Kurikulum 1952 (Rentjana Pelajaran Terurai 1952)</h4>
+                <p class="text-warm-gray leading-relaxed mb-4">
+                  Sebagai penyempurnaan dari Kurikulum 1947, dengan perincian yang lebih mendalam pada setiap mata pelajaran. Setiap mata pelajaran diajarkan oleh satu orang guru. <a href="#ref1" class="citation-link">[1]</a>, <a href="#ref3" class="citation-link">[3]</a>
+                </p>
+
+                <div class="bg-sage-light bg-opacity-20 p-4 rounded-lg mt-4">
+                  <p class="text-sm text-warm-gray italic">
+                    <strong>Inovasi:</strong> Kurikulum ini mengusung konsep tematik dengan menghubungkan isi pelajaran dengan konteks kehidupan sehari-hari. <a href="#ref4" class="citation-link">[4]</a>, <a href="#ref36" class="citation-link">[36]</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- 1964 -->
+              <div class="bg-white rounded-lg p-8 shadow-lg border-l-4 border-warm-gray">
+                <h4 class="font-semibold text-xl mb-4 text-charcoal">Kurikulum 1964 (Rentjana Pendidikan 1964 - Pancawardhana)</h4>
+                <p class="text-warm-gray leading-relaxed mb-4">
+                  Memperkenalkan program &#34;Pancawardhana&#34; yang menekankan pada pengembangan lima aspek: moral, kecerdasan, emosional/artistik, keterampilan, dan jasmaniah. <a href="#ref1" class="citation-link">[1]</a>, <a href="#ref3" class="citation-link">[3]</a>
+                </p>
+
+                <div class="grid md:grid-cols-5 gap-4 mt-6">
+                  <div class="text-center p-3 bg-sage-light bg-opacity-20 rounded-lg">
+                    <i class="fas fa-heart text-sage text-xl mb-2"></i>
+                    <p class="text-xs font-semibold">Moral</p>
+                  </div>
+                  <div class="text-center p-3 bg-sage-light bg-opacity-20 rounded-lg">
+                    <i class="fas fa-brain text-sage text-xl mb-2"></i>
+                    <p class="text-xs font-semibold">Kecerdasan</p>
+                  </div>
+                  <div class="text-center p-3 bg-sage-light bg-opacity-20 rounded-lg">
+      
